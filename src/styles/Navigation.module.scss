@@ -1,0 +1,19 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.3rem;
+
+
+
+    div {
+        display: flex;
+        align-items: flex-end;
+
+
+
+        * {
+            margin: 0 .65rem;
+
+        }
+    }
+}
