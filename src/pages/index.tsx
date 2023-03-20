@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.scss'
 import Navigation from '@/components/Navigation'
 import ProductShowcase from '@/components/ProductShowcase'
+import Purchase from '@/components/Purchase'
 import { Kumbh_Sans } from 'next/font/google'
 
 const kumbh = Kumbh_Sans({
@@ -23,16 +24,18 @@ export default function Home() {
         <Navigation />
         <article className={styles.productPage}>
           <ProductShowcase />
-          <div>
-            <header>
-              <p>SNEAKER COMPANY</p>
-              <h2>Fall Limited Edition Sneakers</h2>
+          <div className={styles.productDetails}>
+            <header className={styles.header}>
+              <p className={styles.companyName}>SNEAKER COMPANY</p>
+              <h2 className={styles.productName}>Fall Limited Edition Sneakers</h2>
             </header>
-            <p>
+            <p className={styles.productDescription}>
               These low-profile sneakers are your perfect casual
               wear companion. Featuring a durable rubber outer sole, they'll
               withstand everything the weather can offer.
             </p>
+
+            <Purchase />
           </div>
 
         </article>

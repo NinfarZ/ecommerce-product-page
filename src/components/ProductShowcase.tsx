@@ -8,10 +8,10 @@ export default function ProductShowcase() {
             <img className={styles.img} src='/images/image-product-1.jpg' alt='product-img' />
 
             <button className={styles.btnPrevious}>
-                <img src='/images/icon-previous.svg'></img>
+                <img width={10} src='/images/icon-previous.svg' />
             </button>
             <button className={styles.btnNext}>
-                <img src='/images/icon-next.svg'></img>
+                <img width={10} src='/images/icon-next.svg' />
             </button>
 
 

@@ -5,3 +5,30 @@
     flex-direction: column;
     align-items: center;
 }
+
+.productDetails {
+    padding: 1.5rem;
+
+
+    .header {
+        .companyName {
+            color: $orange;
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .1rem;
+        }
+
+        .productName {
+            padding-top: 1rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+
+    .productDescription {
+        padding-top: 1rem;
+        color: $dark-greyish-blue;
+        line-height: 1.5rem;
+    }
+
+}

@@ -1,0 +1,41 @@
+@import 'colors';
+
+.purchaseSection {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+
+    .price {
+        display: flex;
+        justify-content: space-between;
+
+
+
+        div {
+            display: flex;
+            align-items: center;
+
+            .discountPrice {
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
+
+            .percentage {
+                color: $orange;
+                background-color: $pale-orange;
+                padding: .3rem;
+                border-radius: 20%;
+                font-weight: 600;
+                margin-left: 1rem;
+            }
+        }
+
+        .originalPrice {
+            color: $grayish-blue;
+            font-weight: 600;
+            text-decoration: line-through;
+        }
+
+
+    }
+}
