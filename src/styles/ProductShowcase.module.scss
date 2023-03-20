@@ -4,6 +4,7 @@
     background-color: $white;
     border: none;
     border-radius: 50%;
+    cursor: pointer;
 
     padding: 1rem;
     margin: .8rem;
@@ -34,6 +35,32 @@
 
     }
 
+
+
+}
+
+@media (min-width: 798px) {
+    .product {
+        max-width: 40ch;
+
+
+        .img {
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+
+        }
+
+        .btnPrevious {
+            display: none;
+        }
+
+        .btnNext {
+            display: none;
+
+
+        }
+
+    }
 
 
 }

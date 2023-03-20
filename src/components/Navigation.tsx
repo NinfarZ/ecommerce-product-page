@@ -6,7 +6,9 @@ export default function Navigation() {
     return (
         <nav className={styles.nav}>
             <div>
-                <img height={19} width={19} src='/images/icon-menu.svg' />
+                <button>
+                    <img height={19} width={19} src='/images/icon-menu.svg' />
+                </button>
                 <img height={24} src='/images/logo.svg' />
             </div>
 

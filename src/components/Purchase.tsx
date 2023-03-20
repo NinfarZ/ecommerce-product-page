@@ -16,9 +16,19 @@ export default function Purchase() {
             </div>
 
             <div className={styles.cart}>
-                <div>
-                    <button></button>
+                <div className={styles.amount}>
+                    <button>
+                        <img src='/images/icon-minus.svg' />
+                    </button>
+                    <span>0</span>
+                    <button>
+                        <img src='/images/icon-plus.svg' />
+                    </button>
                 </div>
+                <button className={styles.addCart}>
+                    <img src='/images/icon-cart.svg' />
+                    <span>Add to cart</span>
+                </button>
 
             </div>
         </section>

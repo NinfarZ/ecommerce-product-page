@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .productDetails {
@@ -29,6 +30,19 @@
         padding-top: 1rem;
         color: $dark-greyish-blue;
         line-height: 1.5rem;
+    }
+
+}
+
+@media (min-width: 798px) {
+    .productPage {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .productDetails {
+        max-width: 50ch;
     }
 
 }
