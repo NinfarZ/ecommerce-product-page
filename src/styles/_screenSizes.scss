@@ -1,0 +1,24 @@
+$screen-size-sm: 576px;
+
+$screen-size-md: 768px;
+
+$screen-size-lg: 992px;
+
+//small screens
+@mixin sm {
+    @media (min-width: #{$screen-size-sm}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: #{$screen-size-md}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: #{$screen-size-lg}) {
+        @content;
+    }
+}

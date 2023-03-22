@@ -4,6 +4,7 @@ import styles from '@/styles/Home.module.scss'
 import Navigation from '@/components/Navigation'
 import ProductShowcase from '@/components/ProductShowcase'
 import Purchase from '@/components/Purchase'
+import { useState } from 'react'
 import { Kumbh_Sans } from 'next/font/google'
 
 const kumbh = Kumbh_Sans({
@@ -12,6 +13,15 @@ const kumbh = Kumbh_Sans({
 
 })
 export default function Home() {
+
+  interface CartItem {
+    name: string
+    price: number
+    amount: number
+  }
+
+  const [itemsInCart, setItemsInCart] = useState<CartItem[]>([])
+
   return (
     <>
       <Head>
@@ -21,7 +31,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={kumbh.className}>
-        <Navigation />
+        <Navigation itemsInCart={itemsInCart} />
         <article className={styles.productPage}>
           <ProductShowcase />
           <div className={styles.productDetails}>
@@ -35,7 +45,7 @@ export default function Home() {
               withstand everything the weather can offer.
             </p>
 
-            <Purchase />
+            <Purchase setItemsInCart={setItemsInCart} />
           </div>
 
         </article>

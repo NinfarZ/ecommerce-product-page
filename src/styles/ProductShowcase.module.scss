@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'screenSizes';
 
 @mixin buttonStyles {
     background-color: $white;
@@ -6,61 +7,108 @@
     border-radius: 50%;
     cursor: pointer;
 
-    padding: 1rem;
-    margin: .8rem;
+    padding: 1.2rem;
+    margin: 1.5rem;
 }
 
-.product {
+.wrapper {
     display: flex;
-    align-items: center;
-    position: relative;
+    flex-direction: column;
 
-
-    .img {
-        object-fit: cover;
-        aspect-ratio: 11.2 / 9;
-    }
-
-    .btnPrevious {
-        @include buttonStyles;
-        position: absolute;
-        left: 0;
-    }
-
-    .btnNext {
-        @include buttonStyles;
-        position: absolute;
-        right: 0;
-
-
-    }
-
-
-
-}
-
-@media (min-width: 798px) {
     .product {
-        max-width: 40ch;
+        display: flex;
+        align-items: center;
+        position: relative;
 
 
         .img {
-            aspect-ratio: 1/1;
-            border-radius: 10px;
-
+            object-fit: cover;
+            aspect-ratio: 11.2 / 9;
         }
 
         .btnPrevious {
-            display: none;
+            @include buttonStyles;
+            position: absolute;
+            left: 0;
         }
 
         .btnNext {
-            display: none;
+            @include buttonStyles;
+            position: absolute;
+            right: 0;
 
 
         }
 
+
+
+    }
+
+    .thumbnails {
+        display: none;
+    }
+}
+
+
+@include lg {
+    .wrapper {
+        min-width: 35ch;
+        max-width: 45ch;
+        gap: 1.5rem;
+
+        .product {
+
+
+
+            .img {
+                aspect-ratio: 1/1;
+                border-radius: 10px;
+
+            }
+
+            .btnPrevious {
+                display: none;
+            }
+
+            .btnNext {
+                display: none;
+
+
+            }
+
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: space-between;
+
+            button {
+
+                aspect-ratio: 1/1;
+                max-width: 20%;
+                background: none;
+                border: none;
+                background-color: $white;
+
+
+                cursor: pointer;
+
+                img {
+                    border-radius: 10px;
+
+
+                }
+
+            }
+
+        }
     }
 
 
+
+}
+
+.imgSelected {
+    filter: opacity(30%);
+    border: solid 2px $orange;
 }
