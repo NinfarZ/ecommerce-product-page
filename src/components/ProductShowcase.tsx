@@ -12,15 +12,23 @@ export default function ProductShowcase() {
         setCurrentImg(newNum)
     }
 
+    function handleNext(): void {
+        setCurrentImg(currentImg !== 4 ? currentImg + 1 : 1)
+    }
+
+    function handlePrevious(): void {
+        setCurrentImg(currentImg !== 1 ? currentImg - 1 : 4)
+    }
+
     return (
         <div className={styles.wrapper}>
             <figure className={styles.product}>
                 <img className={styles.img} src={image} alt='product-img' />
 
-                <button className={styles.btnPrevious}>
+                <button onClick={handlePrevious} className={styles.btnPrevious}>
                     <img width={10} src='/images/icon-previous.svg' />
                 </button>
-                <button className={styles.btnNext}>
+                <button onClick={handleNext} className={styles.btnNext}>
                     <img width={10} src='/images/icon-next.svg' />
                 </button>
 

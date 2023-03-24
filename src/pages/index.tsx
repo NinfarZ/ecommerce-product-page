@@ -14,13 +14,15 @@ const kumbh = Kumbh_Sans({
 })
 export default function Home() {
 
-  interface CartItem {
+  type CartItem = {
     name: string
     price: number
+    originalPrice: number
     amount: number
-  }
+    image: string
+  }[]
 
-  const [itemsInCart, setItemsInCart] = useState<CartItem[]>([])
+  const [itemsInCart, setItemsInCart] = useState<CartItem>([])
 
   return (
     <>
@@ -45,7 +47,7 @@ export default function Home() {
               withstand everything the weather can offer.
             </p>
 
-            <Purchase setItemsInCart={setItemsInCart} />
+            <Purchase setItemsInCart={setItemsInCart} itemsInCart={itemsInCart} />
           </div>
 
         </article>

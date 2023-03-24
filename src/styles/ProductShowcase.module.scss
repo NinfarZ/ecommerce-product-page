@@ -11,46 +11,7 @@
     margin: 1.5rem;
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-
-    .product {
-        display: flex;
-        align-items: center;
-        position: relative;
-
-
-        .img {
-            object-fit: cover;
-            aspect-ratio: 11.2 / 9;
-        }
-
-        .btnPrevious {
-            @include buttonStyles;
-            position: absolute;
-            left: 0;
-        }
-
-        .btnNext {
-            @include buttonStyles;
-            position: absolute;
-            right: 0;
-
-
-        }
-
-
-
-    }
-
-    .thumbnails {
-        display: none;
-    }
-}
-
-
-@include lg {
+@mixin thumbnailLayout {
     .wrapper {
         min-width: 35ch;
         max-width: 45ch;
@@ -83,9 +44,9 @@
             justify-content: space-between;
 
             button {
-
+                flex-basis: 19%;
                 aspect-ratio: 1/1;
-                max-width: 20%;
+                max-width: 100%;
                 background: none;
                 border: none;
                 background-color: $white;
@@ -104,8 +65,57 @@
         }
     }
 
+}
 
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .product {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+
+        .img {
+            object-fit: cover;
+            aspect-ratio: 11.2 / 9;
+        }
+
+        .btnPrevious {
+            @include buttonStyles;
+            position: absolute;
+            left: 0;
+        }
+
+        .btnNext {
+            @include buttonStyles;
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    .thumbnails {
+        display: none;
+    }
+}
+
+
+@include lg {
+    @include thumbnailLayout;
+}
+
+@include md {
+    @include thumbnailLayout;
+
+    .wrapper {
+        flex-direction: row;
+
+        .thumbnails {
+            flex-direction: column;
+        }
+    }
 }
 
 .imgSelected {

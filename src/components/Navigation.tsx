@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '@/styles/Navigation.module.scss'
 import Image from 'next/image'
 
-interface CartItem {
+type CartItem = {
     name: string
     price: number
+    originalPrice: number
     amount: number
+    image: string
 }
-export default function Navigation(props: CartItem) {
+
+type NavigationProps = {
+    itemsInCart: CartItem[]
+}
+
+export default function Navigation({ itemsInCart }: NavigationProps) {
     return (
         <nav className={styles.nav}>
             <div>
@@ -25,26 +32,60 @@ export default function Navigation(props: CartItem) {
             </div>
 
             <div className={styles.clientContent}>
-                <Cart {...props} />
+                <Cart itemsInCart={itemsInCart} />
                 <Image width={24} height={24} src='/images/image-avatar.png' alt='' />
             </div>
         </nav>
     )
 }
 
-function Cart(props: CartItem) {
-    const [amount, setAmount] = useState(props.amount)
+function Cart({ itemsInCart }: NavigationProps) {
+    const [totalAmount, setTotalAmount] = useState<number>(0)
+    const [showCart, setShowCart] = useState<boolean>(false)
+
+    function handleShowCart() {
+        setShowCart(showCart => !showCart)
+    }
+
+    useEffect(() => {
+        setTotalAmount(getTotalAmount())
+    }, [itemsInCart])
+
+    function getTotalAmount(): number {
+        return itemsInCart.map(item => item.amount).reduce((total, current) => total + current, 0)
+    }
+
     return (
         <div className={styles.cart}>
-            <div className={amount !== 0 ? styles.amountPing : ''}>{amount}</div>
-            <button>
+
+            <button onClick={handleShowCart}>
+                <div className={totalAmount !== 0 ? styles.amountPing : ''}>{totalAmount !== 0 && totalAmount}</div>
                 <img width={24} height={24} src='/images/icon-cart.svg' />
             </button>
+            {showCart && <CartPopUp itemsInCart={itemsInCart} />}
         </div>
 
     )
 }
 
-function CartPopUp(props: CartItem) {
+function CartPopUp({ itemsInCart }: NavigationProps) {
 
+    return (
+        <div className={styles.cartPopup}>
+            <p className={styles.header}>Cart</p>
+            {itemsInCart[0] && <div className={styles.purchase}>
+                <div className={styles.wrapper}>
+                    <figure>
+                        <img width={52} src={itemsInCart[0].image} />
+                    </figure>
+
+                    <div className={styles.info}>
+                        <p className={styles.productName}>{itemsInCart[0].name}</p>
+                        <p>${itemsInCart[0].originalPrice}.00 x {itemsInCart[0].amount} <span>${itemsInCart[0].price}.00</span></p>
+                    </div>
+                </div>
+                <button>Checkout</button>
+            </div>}
+        </div>
+    )
 }
