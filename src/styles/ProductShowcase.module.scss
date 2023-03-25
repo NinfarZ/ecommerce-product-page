@@ -12,12 +12,19 @@
 }
 
 @mixin thumbnailLayout {
+
     .wrapper {
         min-width: 35ch;
         max-width: 45ch;
         gap: 1.5rem;
 
         .product {
+
+            .imgButton {
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
 
 
 
@@ -64,6 +71,92 @@
 
         }
     }
+
+}
+
+.lightbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    gap: 2rem;
+    background-color: rgba(0, 0, 0, .8);
+
+    .close {
+        margin-left: 30rem;
+        border: none;
+        cursor: pointer;
+        background: none;
+    }
+
+    .imgWrapper {
+
+
+        display: flex;
+        position: relative;
+        min-width: 30rem;
+        max-width: 30%;
+
+
+
+
+        .img {
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+            width: 100%;
+
+        }
+
+        .btnPrevious {
+            @include buttonStyles;
+            position: absolute;
+            left: -8%;
+            top: 40%;
+
+
+        }
+
+        .btnNext {
+            @include buttonStyles;
+            position: absolute;
+            right: -8%;
+            top: 40%;
+
+        }
+
+    }
+
+    .thumbnails {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        button {
+            flex-basis: 10%;
+            aspect-ratio: 1/1;
+            max-width: 100%;
+            background: none;
+            border: none;
+            background-color: $white;
+            border-radius: 10px;
+
+
+            cursor: pointer;
+
+            img {
+                border-radius: 10px;
+
+
+            }
+
+        }
+    }
+
+
+
 
 }
 

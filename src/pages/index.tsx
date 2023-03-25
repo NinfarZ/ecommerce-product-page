@@ -33,7 +33,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={kumbh.className}>
-        <Navigation itemsInCart={itemsInCart} />
+        <Navigation itemsInCart={itemsInCart} setItemsInCart={setItemsInCart} />
         <article className={styles.productPage}>
           <ProductShowcase />
           <div className={styles.productDetails}>

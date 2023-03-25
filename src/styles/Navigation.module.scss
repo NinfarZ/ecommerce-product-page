@@ -2,11 +2,45 @@
 @import 'screenSizes';
 
 .nav {
-    position: relative;
+
     display: flex;
     justify-content: space-between;
     margin: auto;
     padding: 1.3rem;
+
+    .menuWrapper {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, .7);
+        z-index: 3;
+    }
+
+    .mobileNav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 30%;
+        gap: 2rem;
+
+        background-color: $light-greyish-blue;
+        padding: 2rem;
+
+        .delete {
+            margin-bottom: 2rem;
+        }
+
+        button {
+            color: $black;
+            font-weight: 700;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
 
 
 
@@ -41,6 +75,9 @@
     }
 
     .clientContent {
+        position: relative;
+        gap: 2rem;
+
         .cart {
 
 
@@ -66,11 +103,10 @@
                 flex-direction: column;
                 align-items: center;
                 position: fixed;
-                top: 10%;
-                left: 0;
-                right: 0;
-
-                margin: auto;
+                inset: 0;
+                margin-top: 4rem;
+                margin-left: auto;
+                margin-right: auto;
 
                 background-color: $white;
                 border-radius: 15px;
@@ -82,6 +118,7 @@
 
                 .header {
                     align-self: flex-start;
+                    font-weight: 700;
                 }
 
                 .purchase {
@@ -90,14 +127,27 @@
                     padding-top: 1rem;
                     border-top: 1px solid $grayish-blue;
 
+
+                    .empty {
+                        color: $dark-greyish-blue;
+
+
+                    }
+
                     .wrapper {
                         display: flex;
                         justify-content: space-between;
+                        align-items: center;
+
+                        .productImg {
+                            border-radius: 5px;
+                        }
 
                         .info {
                             display: flex;
                             flex-direction: column;
                             align-items: flex-start;
+                            font-size: .9rem;
 
 
                             p span {
@@ -107,7 +157,7 @@
                         }
                     }
 
-                    button {
+                    .checkout {
                         background-color: $orange;
                         width: 100%;
 
@@ -132,6 +182,10 @@
 
         border-bottom: solid 1px $grayish-blue;
 
+        .menuWrapper {
+            display: none;
+        }
+
         div {
             .menu {
                 display: none;
@@ -145,7 +199,10 @@
 
         .clientContent {
             .cart .cartPopup {
-                left: 60%;
+                margin-top: 6rem;
+                margin-right: 10rem;
+
+
             }
         }
 
@@ -153,9 +210,18 @@
 }
 
 @include md {
-    .nav .clientContent {
-        .cart .cartPopup {
-            left: 60%;
+    .nav {
+        justify-content: space-around;
+        border-bottom: solid 1px $grayish-blue;
+
+        .clientContent {
+            .cart .cartPopup {
+
+                margin-right: 5rem;
+                margin-left: auto;
+            }
         }
     }
+
+
 }
