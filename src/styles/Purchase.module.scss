@@ -78,11 +78,16 @@
             padding: 1rem;
             border-radius: 10px;
             gap: 1rem;
+            box-shadow: 0 10px 40px -10px $orange;
             cursor: pointer;
 
+            svg {
+                fill: $white;
+            }
+        }
 
-
-
+        .addCart:hover {
+            opacity: .6;
         }
     }
 }

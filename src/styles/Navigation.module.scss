@@ -13,6 +13,7 @@
         inset: 0;
         background-color: rgba(0, 0, 0, .7);
         z-index: 3;
+        animation: fade-in 200ms;
     }
 
     .mobileNav {
@@ -25,15 +26,19 @@
         left: 0;
         right: 30%;
         gap: 2rem;
+        animation: menu-slide 200ms;
 
         background-color: $light-greyish-blue;
-        padding: 2rem;
+        padding: 1rem;
 
         .delete {
             margin-bottom: 2rem;
+            padding: 1rem;
+
         }
 
         button {
+            padding: 0 1rem 0 1rem;
             color: $black;
             font-weight: 700;
             background: none;
@@ -89,6 +94,7 @@
                 background-color: $orange;
                 padding: .1rem .4rem .1rem .4rem;
                 border-radius: 15px;
+                animation: ping 100ms;
 
             }
 
@@ -115,6 +121,7 @@
                 max-width: 35ch;
                 padding: 1rem;
                 z-index: 2;
+                animation: fade-in 200ms;
 
                 .header {
                     align-self: flex-start;
@@ -224,4 +231,36 @@
     }
 
 
+}
+
+@keyframes menu-slide {
+    0% {
+
+        transform: translateX(-100%);
+    }
+
+    100% {
+
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes ping {
+    0% {
+        padding: .1rem .6rem .1rem .6rem;
+    }
+
+    100% {
+        padding: .1rem .4rem .1rem .4rem;
+    }
 }

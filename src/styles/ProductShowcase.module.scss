@@ -9,6 +9,12 @@
 
     padding: 1.2rem;
     margin: 1.5rem;
+
+    &:hover path {
+        stroke: $orange;
+    }
+
+
 }
 
 @mixin thumbnailLayout {
@@ -21,6 +27,7 @@
         .product {
 
             .imgButton {
+
                 background: none;
                 border: none;
                 cursor: pointer;
@@ -36,6 +43,7 @@
 
             .btnPrevious {
                 display: none;
+
             }
 
             .btnNext {
@@ -69,6 +77,10 @@
 
             }
 
+            button:hover {
+                opacity: .6;
+            }
+
         }
     }
 
@@ -85,20 +97,27 @@
     gap: 2rem;
     background-color: rgba(0, 0, 0, .8);
 
-    .close {
-        margin-left: 30rem;
-        border: none;
-        cursor: pointer;
-        background: none;
-    }
+
+
 
     .imgWrapper {
 
 
         display: flex;
         position: relative;
-        min-width: 30rem;
+        min-width: 25rem;
         max-width: 30%;
+
+        .close {
+            position: absolute;
+
+            right: 0;
+            top: -8%;
+
+            border: none;
+            cursor: pointer;
+            background: none;
+        }
 
 
 
@@ -113,16 +132,16 @@
         .btnPrevious {
             @include buttonStyles;
             position: absolute;
-            left: -8%;
+            transform: translateX(-100%);
             top: 40%;
-
 
         }
 
         .btnNext {
             @include buttonStyles;
             position: absolute;
-            right: -8%;
+            right: 0;
+            transform: translateX(100%);
             top: 40%;
 
         }
@@ -151,7 +170,10 @@
 
 
             }
+        }
 
+        button:hover {
+            opacity: .6;
         }
     }
 
@@ -170,11 +192,20 @@
         align-items: center;
         position: relative;
 
+        .imgButton {
 
-        .img {
-            object-fit: cover;
-            aspect-ratio: 11.2 / 9;
+            background: none;
+            border: none;
+
+
+            .img {
+                object-fit: cover;
+                aspect-ratio: 11.2 / 9;
+            }
+
         }
+
+
 
         .btnPrevious {
             @include buttonStyles;
@@ -186,6 +217,7 @@
             @include buttonStyles;
             position: absolute;
             right: 0;
+
         }
     }
 
@@ -204,6 +236,7 @@
 
     .wrapper {
         flex-direction: row;
+
 
         .thumbnails {
             flex-direction: column;
