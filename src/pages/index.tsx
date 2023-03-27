@@ -49,8 +49,8 @@ export default function Home() {
 
             <Purchase setItemsInCart={setItemsInCart} itemsInCart={itemsInCart} />
           </div>
-
         </article>
+
 
 
 
