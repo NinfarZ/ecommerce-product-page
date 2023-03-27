@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [My solution](https://your-solution-url.com)
+- Live Site URL: [Live](https://your-live-site-url.com)
 
 ## My process
 
@@ -65,6 +65,6 @@ For my future projects I'll be diving deeper in TypeScript as I really enjoyed t
 
 ## Author
 
-- Website - [Add your name here](https://ninfarz.github.io/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/NinfarZ)
+- Website - [Tasso Lima](https://ninfarz.github.io/)
+- Frontend Mentor - [@NinfarZ](https://www.frontendmentor.io/profile/NinfarZ)
 
