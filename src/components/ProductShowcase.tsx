@@ -8,6 +8,7 @@ export default function ProductShowcase() {
     const [isSelected, setIsSelected] = useState<boolean>(false)
     const [showLightbox, setShowLightbox] = useState<boolean>(false)
     const image = `/images/image-product-${currentImg}.jpg`
+    const thumbnailNumbers: number[] = [1, 2, 3, 4]
 
     function handleThumbnailClick(newNum: number): void {
         setCurrentImg(newNum)
@@ -27,7 +28,7 @@ export default function ProductShowcase() {
 
     return (
         <>
-            {showLightbox && <Lightbox image={image} toggleLightbox={toggleLightbox} previousButton={handlePrevious} nextButton={handleNext} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />}
+            {showLightbox && <Lightbox image={image} thumbnailNumbers={thumbnailNumbers} toggleLightbox={toggleLightbox} previousButton={handlePrevious} nextButton={handleNext} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />}
             <div className={styles.wrapper}>
                 <figure className={styles.product}>
                     <button className={styles.imgButton}>
@@ -48,10 +49,7 @@ export default function ProductShowcase() {
 
                 </figure>
                 <div className={styles.thumbnails}>
-                    <Thumbnail num={1} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />
-                    <Thumbnail num={2} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />
-                    <Thumbnail num={3} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />
-                    <Thumbnail num={4} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />
+                    {thumbnailNumbers.map((num) => <Thumbnail num={num} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />)}
                 </div>
             </div>
         </>
@@ -85,6 +83,7 @@ function Thumbnail({ num, handleThumbnailClick, isSelected, currentImg, setIsSel
 
 type LightboxProps = {
     image: string
+    thumbnailNumbers: number[]
     toggleLightbox: () => void
     previousButton: () => void
     nextButton: () => void
@@ -94,7 +93,7 @@ type LightboxProps = {
     setIsSelected: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function Lightbox({ image, toggleLightbox, previousButton, nextButton, handleThumbnailClick, isSelected, currentImg, setIsSelected }: LightboxProps) {
+function Lightbox({ image, thumbnailNumbers, toggleLightbox, previousButton, nextButton, handleThumbnailClick, isSelected, currentImg, setIsSelected }: LightboxProps) {
 
     return (
         <div className={styles.lightbox}>
@@ -118,10 +117,7 @@ function Lightbox({ image, toggleLightbox, previousButton, nextButton, handleThu
                 </button>
             </div>
             <div className={styles.thumbnails}>
-                <Thumbnail num={1} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />
-                <Thumbnail num={2} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />
-                <Thumbnail num={3} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />
-                <Thumbnail num={4} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />
+                {thumbnailNumbers.map((num) => <Thumbnail num={num} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />)}
             </div>
 
         </div>
