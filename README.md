@@ -30,12 +30,17 @@ Users should be able to:
 
 ### Screenshot
 
+![Captura Web_27-3-2023_12546_localhost](https://user-images.githubusercontent.com/65355075/227926724-177a8ad7-cce8-40c8-9835-99fba0762126.jpeg)
+![Captura Web_27-3-2023_12525_localhost](https://user-images.githubusercontent.com/65355075/227926727-79c492d9-b5cd-4a0e-b76e-8f99224eefea.jpeg)
+![Captura Web_27-3-2023_12454_localhost](https://user-images.githubusercontent.com/65355075/227926729-c5c4ca75-a0b9-4c17-9839-549c621c1dc2.jpeg)
+
+
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [My solution](https://your-solution-url.com)
+- Live Site URL: [Live](https://your-live-site-url.com)
 
 ## My process
 
@@ -60,6 +65,6 @@ For my future projects I'll be diving deeper in TypeScript as I really enjoyed t
 
 ## Author
 
-- Website - [Add your name here](https://ninfarz.github.io/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/NinfarZ)
+- Website - [Tasso Lima](https://ninfarz.github.io/)
+- Frontend Mentor - [@NinfarZ](https://www.frontendmentor.io/profile/NinfarZ)
 
