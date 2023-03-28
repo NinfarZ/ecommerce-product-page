@@ -74,11 +74,11 @@ export default function Purchase({ setItemsInCart, itemsInCart }: PurchaseProps)
             <div className={styles.cart}>
                 <div className={styles.amount}>
                     <button onClick={handleRemove}>
-                        <img src='/images/icon-minus.svg' />
+                        <img src='/images/icon-minus.svg' alt='minus' />
                     </button>
                     <span>{amount}</span>
                     <button onClick={handleAdd}>
-                        <img src='/images/icon-plus.svg' />
+                        <img src='/images/icon-plus.svg' alt='plus' />
                     </button>
                 </div>
                 <button onClick={handleAddToCart} className={styles.addCart}>

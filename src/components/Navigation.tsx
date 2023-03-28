@@ -27,9 +27,9 @@ export default function Navigation({ itemsInCart, setItemsInCart }: NavigationPr
             {isMenuOpen && <MobileMenu setIsMenuOpen={setIsMenuOpen} />}
             <div>
                 <button onClick={handleMenuOpen} className={styles.menu}>
-                    <img height={19} width={19} src='/images/icon-menu.svg' />
+                    <img height={19} width={19} src='/images/icon-menu.svg' alt='menu' />
                 </button>
-                <img height={24} src='/images/logo.svg' />
+                <img height={24} src='/images/logo.svg' alt='logo' />
                 <div className={styles.navLinks}>
                     <button>Collections</button>
                     <button>Men</button>
@@ -41,7 +41,7 @@ export default function Navigation({ itemsInCart, setItemsInCart }: NavigationPr
 
             <div className={styles.clientContent}>
                 <Cart itemsInCart={itemsInCart} setItemsInCart={setItemsInCart} />
-                <Image width={24} height={24} src='/images/image-avatar.png' alt='' />
+                <Image width={24} height={24} src='/images/image-avatar.png' alt='avatar' />
             </div>
         </nav>
     )
@@ -68,7 +68,7 @@ function Cart({ itemsInCart, setItemsInCart }: NavigationProps) {
 
             <button onClick={handleShowCart}>
                 <div className={totalAmount !== 0 ? styles.amountPing : ''}>{totalAmount !== 0 && totalAmount}</div>
-                <img width={24} height={24} src='/images/icon-cart.svg' />
+                <img width={24} height={24} src='/images/icon-cart.svg' alt='cart' />
             </button>
             {showCart && <CartPopUp itemsInCart={itemsInCart} setItemsInCart={setItemsInCart} />}
         </div>
@@ -96,7 +96,7 @@ function CartPopUp({ itemsInCart, setItemsInCart }: NavigationProps) {
                         <p>${itemsInCart[0].originalPrice}.00 x {itemsInCart[0].amount} <span>${itemsInCart[0].price}.00</span></p>
                     </div>
                     <button onClick={handleDelete}>
-                        <img src='/images/icon-delete.svg' />
+                        <img src='/images/icon-delete.svg' alt='delete' />
                     </button>
 
                 </div>
@@ -117,7 +117,7 @@ function MobileMenu({ setIsMenuOpen }: MenuProps) {
     return (
         <div className={styles.menuWrapper}>
             <div className={styles.mobileNav}>
-                <button onClick={handleClose} className={styles.delete}><img src='/images/icon-close.svg' /></button>
+                <button onClick={handleClose} className={styles.delete}><img src='/images/icon-close.svg' alt='close' /></button>
                 <button>Collections</button>
                 <button>Men</button>
                 <button>Women</button>
