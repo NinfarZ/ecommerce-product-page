@@ -49,7 +49,7 @@ export default function ProductShowcase() {
 
                 </figure>
                 <div className={styles.thumbnails}>
-                    {thumbnailNumbers.map((num) => <Thumbnail num={num} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />)}
+                    {thumbnailNumbers.map((num) => <Thumbnail key={num} num={num} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />)}
                 </div>
             </div>
         </>
@@ -58,6 +58,7 @@ export default function ProductShowcase() {
 }
 
 interface ThumbnailProps {
+    key: number
     num: number
     handleThumbnailClick: (newNum: number) => void
     isSelected: boolean
@@ -117,7 +118,7 @@ function Lightbox({ image, thumbnailNumbers, toggleLightbox, previousButton, nex
                 </button>
             </div>
             <div className={styles.thumbnails}>
-                {thumbnailNumbers.map((num) => <Thumbnail num={num} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />)}
+                {thumbnailNumbers.map((num) => <Thumbnail key={num} num={num} handleThumbnailClick={handleThumbnailClick} isSelected={isSelected} currentImg={currentImg} setIsSelected={setIsSelected} />)}
             </div>
 
         </div>

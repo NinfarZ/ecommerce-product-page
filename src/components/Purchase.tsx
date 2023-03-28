@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import styles from '@/styles/Purchase.module.scss'
 
 interface PurchaseProps {
@@ -18,11 +18,6 @@ interface CartItem {
 
 export default function Purchase({ setItemsInCart, itemsInCart }: PurchaseProps) {
     const [amount, setAmount] = useState(0)
-
-    useEffect(() => {
-        console.log(itemsInCart);
-    }, [itemsInCart]);
-
 
     function handleAdd(): void {
         setAmount(amount + 1)
